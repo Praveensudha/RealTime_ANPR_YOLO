@@ -20,7 +20,7 @@ READER: easyocr.Reader = None
 CONFIDENCE_THRESHOLD = 0.001 
  
 # Semantic version for this core module. Bumped locally as a non-invasive metadata change.
-ANPR_VERSION = "0.1.1"
+ANPR_VERSION = "0.1.2"
 
 # Author metadata (non-invasive)
 ANPR_AUTHOR = "Praveensudha"
