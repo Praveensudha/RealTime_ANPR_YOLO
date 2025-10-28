@@ -13,8 +13,12 @@ from anpr_core import initialize_models
 from db_manager import log_detection, get_detection_history
 
 app = Flask(__name__)
-# Enable CORS for React frontend (localhost:3000)
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+# Enable CORS for React frontend with additional security headers
+CORS(app, resources={r"/api/*": {
+    "origins": "http://localhost:3000",
+    "methods": ["GET", "POST"],
+    "allow_headers": ["Content-Type"]
+}})
 
 # --- CONFIGURATION ---
 UPLOAD_FOLDER = 'uploads'
