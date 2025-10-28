@@ -18,6 +18,9 @@ READER: easyocr.Reader = None
 # Set to 0.001 to ensure all boxes are checked (for maximum detection recall).
 # The code relies on REGEX filtering (not confidence) to filter the OCR output.
 CONFIDENCE_THRESHOLD = 0.001 
+ 
+# Semantic version for this core module. Bumped locally as a non-invasive metadata change.
+ANPR_VERSION = "0.1.1"
 
 
 # --- INITIALIZATION FUNCTION (Called by app.py on startup) ---
@@ -198,6 +201,15 @@ def get_model_status() -> Dict[str, Any]:
         "reader_loaded": READER is not None,
         "yolo_model_info": yolo_info,
     }
+
+
+def get_anpr_version() -> str:
+    """
+    Return the semantic version of this ANPR core module.
+
+    Purely informational and non-invasive.
+    """
+    return ANPR_VERSION
 
 
 # Initialize on import so app.py can access the objects immediately
