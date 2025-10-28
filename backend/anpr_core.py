@@ -184,8 +184,10 @@ def process_anpr_advanced(image_path: str) -> Dict[str, Any]:
         }
 
     except Exception as e:
-        # Catch any unexpected runtime errors
-        print(f"Advanced ANPR Fatal Error: {e}")
+        # Catch any unexpected runtime errors with detailed logging
+        error_msg = f"Advanced ANPR Fatal Error: {str(e)} in process_anpr_advanced"
+        print(f"[ERROR] {error_msg}")
+        print(f"[DEBUG] Image path: {image_path}")
         return {"plate_text": f"ANPR Error: {str(e)}", "coordinates": [], "confidence": 0.0}
 
 # Initialize on import so app.py can access the objects immediately
