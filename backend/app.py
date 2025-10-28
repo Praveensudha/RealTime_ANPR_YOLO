@@ -30,8 +30,8 @@ def process_video_anpr(video_path, filename):
         raise ValueError("Error opening video file.")
         
     log_data = []
-    # Process every 10th frame to speed up analysis (adjust if needed)
-    FRAME_SKIP = 10 
+    # Process every 8th frame for better detection rate while maintaining performance
+    FRAME_SKIP = 8 
     frame_count = 0
     
     while cap.isOpened():
