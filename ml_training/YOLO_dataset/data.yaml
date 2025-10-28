@@ -1,0 +1,9 @@
+path: C:\Users\kirut\OneDrive\Desktop\ANPR_Project\ml_training\YOLO_dataset 
+
+# These paths are now RELATIVE to the 'path' variable above.
+train: images/train 
+val: images/val 
+
+# Classes (Ensure this matches your custom training)
+nc: 1
+names: ['license-plate']
