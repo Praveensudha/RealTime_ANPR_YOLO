@@ -227,5 +227,12 @@ def get_anpr_author() -> str:
     return ANPR_AUTHOR
 
 
+def get_anpr_license() -> str:
+    """
+    Return the license of the ANPR core module (informational).
+    """
+    return ANPR_LICENSE
+
+
 # Initialize on import so app.py can access the objects immediately
 initialize_models()
