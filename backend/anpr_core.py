@@ -47,7 +47,6 @@ def initialize_models():
     print("ANPR Core: Models loaded successfully.")
 
 
-# --- MAIN PROCESSING FUNCTION (Called by app.py for each image upload) ---
 def process_anpr_advanced(image_path: str) -> Dict[str, Any]:
     """Detects plates using YOLOv8 and recognizes characters with EasyOCR and preprocessing."""
     
@@ -179,6 +178,27 @@ def process_anpr_advanced(image_path: str) -> Dict[str, Any]:
         # Catch any unexpected runtime errors
         print(f"Advanced ANPR Fatal Error: {e}")
         return {"plate_text": f"ANPR Error: {str(e)}", "coordinates": [], "confidence": 0.0}
+
+# Initialize on import so app.py can access the objects immediately
+def get_model_status() -> Dict[str, Any]:
+    """
+    Non-invasive helper that returns the current status of the loaded models.
+
+    This function is purely additive and does not change any runtime state.
+    It can be used by external callers (or debugging endpoints) to check whether
+    the YOLO and EasyOCR models are loaded.
+    """
+    try:
+        yolo_info = str(YOLO_MODEL) if YOLO_MODEL is not None else None
+    except Exception:
+        yolo_info = None
+
+    return {
+        "yolo_loaded": YOLO_MODEL is not None,
+        "reader_loaded": READER is not None,
+        "yolo_model_info": yolo_info,
+    }
+
 
 # Initialize on import so app.py can access the objects immediately
 initialize_models()
