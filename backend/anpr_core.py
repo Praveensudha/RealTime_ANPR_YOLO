@@ -216,5 +216,14 @@ def get_anpr_version() -> str:
     return ANPR_VERSION
 
 
+def get_anpr_author() -> str:
+    """
+    Return the author/owner name for this ANPR core module.
+
+    Purely informational and non-invasive.
+    """
+    return ANPR_AUTHOR
+
+
 # Initialize on import so app.py can access the objects immediately
 initialize_models()
