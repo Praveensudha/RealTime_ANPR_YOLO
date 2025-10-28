@@ -22,6 +22,10 @@ CONFIDENCE_THRESHOLD = 0.001
 # Semantic version for this core module. Bumped locally as a non-invasive metadata change.
 ANPR_VERSION = "0.1.1"
 
+# Author metadata (non-invasive)
+ANPR_AUTHOR = "Praveensudha"
+
+
 
 # --- INITIALIZATION FUNCTION (Called by app.py on startup) ---
 def initialize_models():
