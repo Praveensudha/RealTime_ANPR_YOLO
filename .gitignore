@@ -1,0 +1,28 @@
+# ------------------
+# PYTHON ENVIRONMENT & CACHE
+# ------------------
+venv/
+__pycache__/
+*.pyc
+
+# ------------------
+# MACHINE LEARNING ARTIFACTS
+# ------------------
+# Ignore all training runs (large logs, checkpoints, etc.)
+/ml_training/runs/
+/ml_training/yolov8s.pt
+/ml_training/conversion_data/
+/ml_training/*.zip
+
+# ------------------
+# DEPLOYMENT/USER FILES
+# ------------------
+/backend/uploads/
+/backend/anpr_log.db
+/backend/venv/
+
+# ------------------
+# FRONTEND / BUILD
+# ------------------
+/frontend/node_modules
+/frontend/build
