@@ -25,6 +25,8 @@ ANPR_VERSION = "0.1.1"
 # Author metadata (non-invasive)
 ANPR_AUTHOR = "Praveensudha"
 
+# License metadata (non-invasive)
+ANPR_LICENSE = "MIT"
 
 
 # --- INITIALIZATION FUNCTION (Called by app.py on startup) ---
