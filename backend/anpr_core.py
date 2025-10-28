@@ -103,8 +103,8 @@ def process_anpr_advanced(image_path: str) -> Dict[str, Any]:
 
             cropped_plate_gray = cv2.cvtColor(cropped_plate_color, cv2.COLOR_BGR2GRAY)
 
-            # 1. CLAHE (Contrast Enhancement) - Improves local visibility
-            clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+            # 1. CLAHE (Contrast Enhancement) - Improves local visibility with optimized parameters
+            clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(16,16))
             enhanced_image = clahe.apply(cropped_plate_gray)
 
             # 2. Median Blur (Noise Reduction) - Removes small specks/noise
